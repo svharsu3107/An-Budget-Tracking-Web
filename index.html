@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yosanai — Think Before You Spend</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <h1>Yosanai <span>思</span></h1>
+    <div id="authStatus"></div>
+  </header>
+
+  <!-- ===== AUTH SCREEN ===== -->
+  <section id="authScreen" class="screen">
+    <div class="card">
+      <h2>Welcome to Yosanai</h2>
+      <input id="email" type="email" placeholder="Email" />
+      <input id="password" type="password" placeholder="Password" />
+      <button id="loginBtn">Login</button>
+      <button id="signupBtn" class="secondary">Sign Up</button>
+    </div>
+  </section>
+
+  <!-- ===== DASHBOARD ===== -->
+  <main id="dashboard" class="screen hidden">
+
+    <section class="card">
+      <h2>Monthly Budget</h2>
+      <label>Monthly Income (₹)</label>
+      <input id="incomeInput" type="number" placeholder="e.g. 15000" />
+      <button id="saveIncomeBtn">Save Income</button>
+      <p id="remainingBudget"></p>
+    </section>
+
+    <section class="card">
+      <h2>Log an Expense</h2>
+      <input id="expenseName" placeholder="What did you spend on?" />
+      <input id="expenseAmount" type="number" placeholder="Amount (₹)" />
+      <select id="expenseCategory">
+        <option>Food</option>
+        <option>Rent</option>
+        <option>Transport</option>
+        <option>Shopping</option>
+        <option>Other</option>
+      </select>
+      <button id="addExpenseBtn">Add Expense</button>
+      <canvas id="spendChart"></canvas>
+    </section>
+
+    <section class="card">
+      <h2>Watchlist</h2>
+      <input id="itemName" placeholder="Item name" />
+      <input id="itemLink" placeholder="Amazon/Flipkart link" />
+      <input id="itemPrice" type="number" placeholder="Current price (₹)" />
+      <select id="itemCategory">
+        <option>Food</option>
+        <option>Rent</option>
+        <option>Transport</option>
+        <option>Shopping</option>
+        <option>Other</option>
+      </select>
+      <button id="addItemBtn">Add to Watchlist</button>
+
+      <div id="watchlistItems"></div>
+    </section>
+
+  </main>
+
+  <div id="notificationArea"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/budget.js"></script>
+  <script src="js/gemini.js"></script>
+  <script src="js/watchlist.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
